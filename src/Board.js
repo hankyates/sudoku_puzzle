@@ -46,6 +46,17 @@ Board.prototype = {
       }
     }
     return true;
+  },
+  isValid: function() {
+    for (var i=0; i < 9; i++) {
+      var rowIsValid = this.isSetValid(this.getRow(i)),
+          colIsValid = this.isSetValid(this.getCol(i)),
+          gridIsValid = this.isSetValid(this.getGrid(i));
+      if (!rowIsValid && !colIsValid && !gridIsValid) {
+        return false;
+      }
+    }
+    return true;
   }
 }
 

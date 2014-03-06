@@ -101,4 +101,10 @@ describe('Board', function() {
     });
   });
 
+  describe('isValid', function() {
+    it('should return true the board is', function() {
+      expect(this.board.isValid()).to.be.true;
+    });
+  });
+
 });
