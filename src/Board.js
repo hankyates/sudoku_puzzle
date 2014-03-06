@@ -15,6 +15,16 @@ Board.prototype = {
     var begIdx = (9 * rowNumber),
         endIdx = begIdx + 9;
     return this.arr.slice(begIdx, endIdx);
+  },
+  getCol: function(colNumber) {
+    var col = [];
+
+    for (var i = 0; i < 9; i++) {
+      col.push(this.arr[(9 * i) + colNumber]);
+    }
+
+    return col;
+
   }
 }
 

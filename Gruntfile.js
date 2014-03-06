@@ -5,8 +5,8 @@ module.exports = function(grunt) {
       files: ['test/**/*_test.js']
     },
     watch: {
-      test: {
-        files: '<%= simplemocha.files %>',
+      all: {
+        files: ['**/*.js'],
         tasks: ['simplemocha']
       }
     }

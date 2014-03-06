@@ -34,23 +34,27 @@ describe('Board', function() {
   });
 
   describe('getCell', function() {
-
     it('should return the cell that was set based on x,y coordinates', function() {
       expect(this.board.getCell(5,6)).to.equal(7);
       expect(this.board.getCell(0,0)).to.equal(2);
       expect(this.board.getCell(8,8)).to.equal(5);
     });
-
   });
 
   describe('getRow', function() {
-
     it('should return a set containing the row', function() {
       expect(this.board.getRow(5)[6]).to.eql(7);
       expect(this.board.getRow(0)[0]).to.eql(2);
       expect(this.board.getRow(8)[8]).to.eql(5);
     });
+  });
 
+  describe('getCol', function() {
+    it('should return a set containing the row', function() {
+      expect(this.board.getCol(8)[8]).to.eql(5);
+      expect(this.board.getCol(6)[5]).to.eql(7);
+      expect(this.board.getCol(0)[0]).to.eql(2);
+    });
   });
 
 });
