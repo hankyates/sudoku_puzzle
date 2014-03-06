@@ -24,7 +24,17 @@ Board.prototype = {
     }
 
     return col;
+  },
+  getGrid: function(gridNumber) {
+    var grid = [];
 
+    for (var i = 0; i < 9; i++) {
+      var x = ((gridNumber % 3) * 3) + (i % 3),
+          y = (~~(gridNumber / 3) * 3) + ~~(i / 3);
+      grid.push(this.getCell(x, y));
+    }
+
+    return grid;
   }
 }
 

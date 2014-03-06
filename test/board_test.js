@@ -50,10 +50,18 @@ describe('Board', function() {
   });
 
   describe('getCol', function() {
-    it('should return a set containing the row', function() {
+    it('should return a set containing the column', function() {
       expect(this.board.getCol(8)[8]).to.eql(5);
       expect(this.board.getCol(6)[5]).to.eql(7);
       expect(this.board.getCol(0)[0]).to.eql(2);
+    });
+  });
+
+  describe('getGrid', function() {
+    it('should return a set containing the grid', function() {
+      expect(this.board.getGrid(8)[8]).to.eql(5);
+      expect(this.board.getGrid(0)[0]).to.eql(2);
+      expect(this.board.getGrid(7)[2]).to.eql(7);
     });
   });
 
