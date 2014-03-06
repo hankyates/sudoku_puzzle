@@ -6,6 +6,9 @@ describe('Board', function() {
 
   beforeEach(function() {
     this.board = new Board();
+    this.board.setCell(5,6,7);
+    this.board.setCell(0,0,2);
+    this.board.setCell(8,8,5);
   });
 
   describe('constructor', function() {
@@ -23,13 +26,19 @@ describe('Board', function() {
   describe('setCell', function() {
 
     it('should set the cell based on x,y coordinates', function() {
-      this.board.setCell(5,6,7);
       expect(this.board.arr[51]).to.equal(7);
-      this.board.setCell(0,0,2);
       expect(this.board.arr[0]).to.equal(2);
-      this.board.setCell(8,8,5);
-      console.log(this.board.arr);
       expect(this.board.arr[80]).to.equal(5);
+    });
+
+  });
+
+  describe('getCell', function() {
+
+    it('should return the cell that was set based on x,y coordinates', function() {
+      expect(this.board.getCell(5,6)).to.equal(7);
+      expect(this.board.getCell(0,0)).to.equal(2);
+      expect(this.board.getCell(8,8)).to.equal(5);
     });
 
   });
