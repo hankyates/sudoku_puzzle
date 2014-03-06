@@ -4,11 +4,11 @@ function Board () {
 
 Board.prototype = {
   setCell: function(x, y, value) {
-    var index = (9 * x) + y;
+    var index = (9 * y) + x;
     this.arr[index] = value;
   },
   getCell: function(x, y) {
-    var index = (9 * x) + y;
+    var index = (9 * y) + x;
     return this.arr[index];
   },
   getRow: function(rowNumber) {
@@ -35,6 +35,17 @@ Board.prototype = {
     }
 
     return grid;
+  },
+  isSetValid: function(set) {
+    var uniques = {};
+    for (var i=0; i < set.length; i++){
+      if (uniques[set[i]]){
+        return false;
+      } else {
+        uniques[set[i]] = true;
+      }
+    }
+    return true;
   }
 }
 
