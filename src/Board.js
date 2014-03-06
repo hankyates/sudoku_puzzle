@@ -52,7 +52,7 @@ Board.prototype = {
       var rowIsValid = this.isSetValid(this.getRow(i)),
           colIsValid = this.isSetValid(this.getCol(i)),
           gridIsValid = this.isSetValid(this.getGrid(i));
-      if (!rowIsValid && !colIsValid && !gridIsValid) {
+      if (!rowIsValid || !colIsValid || !gridIsValid) {
         return false;
       }
     }
