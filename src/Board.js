@@ -10,6 +10,11 @@ Board.prototype = {
   getCell: function(x, y) {
     var index = (9 * x) + y;
     return this.arr[index];
+  },
+  getRow: function(rowNumber) {
+    var begIdx = (9 * rowNumber),
+        endIdx = begIdx + 9;
+    return this.arr.slice(begIdx, endIdx);
   }
 }
 

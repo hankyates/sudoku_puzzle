@@ -43,4 +43,14 @@ describe('Board', function() {
 
   });
 
+  describe('getRow', function() {
+
+    it('should return a set containing the row', function() {
+      expect(this.board.getRow(5)[6]).to.eql(7);
+      expect(this.board.getRow(0)[0]).to.eql(2);
+      expect(this.board.getRow(8)[8]).to.eql(5);
+    });
+
+  });
+
 });
